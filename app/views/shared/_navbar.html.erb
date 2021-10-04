@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
     <div class="container">   
                 <% if user_signed_in? %>
-        <a class="navbar-brand" href="<%= root_path %>"><p class="nav-item text-white font-weight-bold">Bienvenid@ <%=current_user.name%> </p></a>
+        <a class="navbar-brand" href="<%= root_path %>"><p class="text-white font-weight-bold ms-auto mb-2 mb-lg-0">Bienvenid@  <%=current_user.name%> </p></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,12 +21,12 @@
                     <%= link_to 'Salir', destroy_user_session_path,method: :delete, class: "logout" %>
                 </li>
                 <% else %>
-                <li class="nav-item" href="#">
-                    <%= link_to "Acceder", user_session_path %></a>
+                <li class="nav-link text-whitek" >
+                    <%= link_to "Acceder", user_session_path %>
                 </li>
     
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><%= link_to "Registrarse", new_user_registration_path %></a>
+                <li class="nav-link text-white">
+                    <%= link_to "Registrarse", new_user_registration_path %>
                 </li>
                 <% end %>
             </ul>      
