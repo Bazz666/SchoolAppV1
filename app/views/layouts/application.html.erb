@@ -19,16 +19,11 @@
   </head>
 
   <body>
-    <div>
-    <% if signed_in? %>
-      <%= link_to "Salir", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Registrarse", new_user_registration_path %>
-      <%= link_to "Ingresar", new_user_session_path %>
-    <% end %>
-    </div>
     
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="container mt-5 pt-5">
+      <%= yield %>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
