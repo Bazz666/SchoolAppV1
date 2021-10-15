@@ -20,19 +20,10 @@ a{
     color: rgb(68, 47, 158);
 }
 .navbar{
-    width: 100%;
-    display: block;
-    padding: 14px 16px;
-    background: transparent;
-    outline: none;
-    border: 0;
-    letter-spacing: 0.1em;
-    font-weight: bold;
+    
     font-family: monospace;
     background-color: rgb(106, 192, 241);
-    padding: 5px 10px;
-
-    font-size:0.8em;
+    
 }
 
 h2 {
@@ -41,9 +32,21 @@ h2 {
     font-weight: 600;
     text-transform: uppercase;
     display:inline-block; 
-    color: rebeccapurple;
+    color:  rgb(68, 47, 158);
     font-weight: bold;
     font-family: monospace;
+    margin-top:auto
+}
+h1 {
+    
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display:inline-block; 
+    color:  rgb(68, 47, 158);
+    font-weight: bold;
+    font-family: monospace;
+    margin-top:auto
 }
 body {
     font-family: 'monospace';
@@ -53,26 +56,87 @@ body {
     margin: 0;
     
 }
+table {
+    width: 100%;
+    display: block;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: rgb(99, 51, 153);
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid black;
+    
+}
+thead {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: rgb(99, 51, 153);
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    background-color: rgb(106, 192, 241);
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+tbody {
+    
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+p {
+    margin-top: auto;
+    text-justify: auto;
+}
 
 th {
-    font-family: monospace;
-    
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    
+    background-color: rgb(106, 192, 241);
+    color: cornsilk;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    background-color: rgb(106, 192, 241);
+    padding: 5px 10px;
+    font-size: 0.8em;
 }
 
-tr {
+.well {
     font-family: monospace;
-    
+    text-transform: capitalize;
+    text-justify: auto;
+}
+
+td {
+    font-family: monospace;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    margin-left: auto
+    margin-left: auto;
+    letter-spacing: 0.1em;
+    padding: 5px 10px;
+    font-size: 0.8em;
 }
 
-div{
-    border-radius: 15px;
+.chat-room {
+    height: 50vh;
+
 }
 

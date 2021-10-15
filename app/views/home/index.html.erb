@@ -1,2 +1,90 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+
+<% if current_user.present? %>
+
+    <h1>Bienvenido @<%=current_user.name%></h1>
+    <div id="profile"> <%= render 'home/profile' %> </div>
+    
+
+    <section>
+        <div class="container">
+            <div class="text-center mt-3"><h2 class="title-product">School NEWS</h2>
+            </div>
+
+            <div class="row flex-row flex-nowrap ml-auto mt-3 overflow-auto ">
+                <div class="col">
+                    <a href="<%=  %>">
+                        <div class="card text-black bg-white">
+                            <%= image_tag('2.jpg',class:'card-img-top') %>
+                            <div class="card-body">
+                                <h4 class="card-title">Example0</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia aut dolor ex architecto
+                                    ratione
+                                    corrupti?
+                                    <div class="btn btn-primary">Comenzar</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="<%=   %>">
+                        <div class="card text-black bg-white">
+                            <%= image_tag('2.jpg',class:'card-img-top') %>
+                            <div class="card-body">
+                                <h4 class="card-title">Example1</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia aut dolor ex architecto
+                                    ratione
+                                    corrupti?
+                                    <div class="btn btn-primary">Comenzar</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <div class="card text-black bg-white">
+                            <%= image_tag('2.jpg',class:'card-img-top') %>
+                            <div class="card-body">
+                                <h4 class="card-title">Example2</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia aut dolor ex architecto
+                                    ratione
+                                    corrupti?
+                                    <div class="btn btn-primary">Comenzar</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+<% else %>
+
+    <h2 class=" mt-5">lorem tittle</h2>
+    <p> 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel iste, omnis mollitia dicta ratione vero sint eveniet non. Obcaecati iste minima aut praesentium molestiae laudantium quasi eius quos itaque debitis?
+        Vel sunt illum ducimus. Itaque ratione ea adipisci, sint dolores perferendis recusandae voluptatibus accusantium quam architecto tempore tempora quisquam ullam hic maiores deserunt necessitatibus consequatur rem quas, doloremque labore. Molestiae?
+        Dolor unde dolore, dignissimos magni soluta mollitia natus, aut ut consequatur corporis architecto illo optio deleniti quae illum praesentium doloribus totam iusto sint recusandae deserunt. Vitae nam ipsam natus voluptate?
+        Quibusdam facilis quae cum, nam maxime pariatur officia, quia iure odit eius, repudiandae dolorum tempora consequatur molestiae exercitationem? Odio, nemo. Vel fugit odit accusantium. Sint nam cum reprehenderit! Ex, nulla!
+    </p>
+    <hr>
+    <h2 >lorem tittle</h2>
+    <p> 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel iste, omnis mollitia dicta ratione vero sint eveniet non. Obcaecati iste minima aut praesentium molestiae laudantium quasi eius quos itaque debitis?
+        Vel sunt illum ducimus. Itaque ratione ea adipisci, sint dolores perferendis recusandae voluptatibus accusantium quam architecto tempore tempora quisquam ullam hic maiores deserunt necessitatibus consequatur rem quas, doloremque labore. Molestiae?
+        Dolor unde dolore, dignissimos magni soluta mollitia natus, aut ut consequatur corporis architecto illo optio deleniti quae illum praesentium doloribus totam iusto sint recusandae deserunt. Vitae nam ipsam natus voluptate?
+        Quibusdam facilis quae cum, nam maxime pariatur officia, quia iure odit eius, repudiandae dolorum tempora consequatur molestiae exercitationem? Odio, nemo. Vel fugit odit accusantium. Sint nam cum reprehenderit! Ex, nulla!
+    </p>
+
+    
+
+    <button class="btn mt-5"><%= link_to "Create Account", new_user_registration_path %></button>
+    <br>
+    <button class="btn"><%= link_to "Login", user_session_path %></button>
+
+
+
+<% end%>

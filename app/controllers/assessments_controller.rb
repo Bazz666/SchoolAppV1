@@ -4,6 +4,7 @@ class AssessmentsController < ApplicationController
   # GET /assessments or /assessments.json
   def index
     @assessments = Assessment.all
+    @users = User.all
   end
 
   # GET /assessments/1 or /assessments/1.json
@@ -64,6 +65,6 @@ class AssessmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def assessment_params
-      params.require(:assessment).permit(:grade, :course, :user, :departament)
+      params.require(:assessment).permit(:grade, :course_id, :user_id,  :departament_id, {user_id:[]})
     end
 end

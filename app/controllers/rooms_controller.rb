@@ -1,13 +1,21 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.all
+    @messages = Message.all
+    @message = Message.new
+    @users = User.all
   end
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    @messages = Message.all
+    @message = Message.new
+    @users = User.all
+    @rooms = Room.all
+    render 'index'
   end
 
   # GET /rooms/new

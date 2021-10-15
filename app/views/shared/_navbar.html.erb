@@ -1,35 +1,58 @@
-<nav class="navbar navbar-expand-lg navbar-light  fixed-top">
-    <div class="container">   
-                <% if user_signed_in? %>
-        <a class="navbar-brand" href="<%= root_path %>"><p class="text-white font-weight-bold ms-auto mb-2 mb-lg-0">Bienvenid@ <%=current_user.lastName%> </p></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link text-white" aria-current="page" href="<%= root_path %>">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Rooms</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Assessments</a>
-                </li>
-                <li class="nav-link text-white">
-                    <%= link_to 'Salir', destroy_user_session_path,method: :delete, class: "logout" %>
-                </li>
-                <% else %>
-                <li class="nav-link text-whitek" >
-                    <%= link_to "Acceder", user_session_path %>
-                </li>
-    
-                <li class="nav-link text-white">
-                    <%= link_to "Registrarse", new_user_registration_path %>
-                </li>
-                <% end %>
-            </ul>      
-        </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <%= link_to "Home", root_path, class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Rooms", rooms_path, class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Assessments", assessments_path, class:'nav-link' %>
+        </li>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Teacher Section
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Calendar</a>
+            <a class="dropdown-item" href="#">My Courses</a>
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">General Message</a>
+            </div>
+        </li>
+        
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login as: @<%= current_user.name %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#"><%= link_to "Edit Profile", edit_user_registration_path, class:'dropdown-item' %></a>
+            <a class="dropdown-item" href="#"><%= link_to "Help", edit_user_registration_path, class:'dropdown-item' %></a>
+            
+            <div class="dropdown-divider"></div>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+            </div>
+        </li>
+        <% else %>
+        <li class="nav-item">
+            <%= link_to "Create Account", new_user_registration_path, class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Login", user_session_path, class:'nav-link' %>
+        </li>
+        <% end %>
+        </ul>
     </div>
 </nav>
+

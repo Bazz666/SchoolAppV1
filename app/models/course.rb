@@ -1,5 +1,9 @@
 class Course < ApplicationRecord
+    has_many :users , through: :assessments
     has_many :assessments
 
-    validates :name, presence: true
+    def to_s
+        name
+    end
 end
+

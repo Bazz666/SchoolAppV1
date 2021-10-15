@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  grade: MyString
-  course: 
-  user: 
-  departament: 
+  grade: 1
+  course: one
+  user: one
+  departament: one
 
 two:
-  grade: MyString
-  course: 
-  user: 
-  departament: 
+  grade: 1
+  course: two
+  user: two
+  departament: two

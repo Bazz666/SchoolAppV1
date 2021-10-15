@@ -11,13 +11,14 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @assessment.user %>
+  <strong>Departament:</strong>
+  <%= @assessment.departament %>
 </p>
 
 <p>
-  <strong>Departament:</strong>
-  <%= @assessment.departament %>
+  <strong>Students (pendiente):</strong>
+  <%= @assessment.users %>
+  
 </p>
 
 <%= link_to 'Edit', edit_assessment_path(@assessment) %> |

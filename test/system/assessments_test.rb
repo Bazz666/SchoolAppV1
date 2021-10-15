@@ -14,10 +14,10 @@ class AssessmentsTest < ApplicationSystemTestCase
     visit assessments_url
     click_on "New Assessment"
 
-    fill_in "Course", with: @assessment.course
-    fill_in "Departament", with: @assessment.departament
+    fill_in "Course", with: @assessment.course_id
+    fill_in "Departament", with: @assessment.departament_id
     fill_in "Grade", with: @assessment.grade
-    fill_in "User", with: @assessment.user
+    fill_in "User", with: @assessment.user_id
     click_on "Create Assessment"
 
     assert_text "Assessment was successfully created"
@@ -28,10 +28,10 @@ class AssessmentsTest < ApplicationSystemTestCase
     visit assessments_url
     click_on "Edit", match: :first
 
-    fill_in "Course", with: @assessment.course
-    fill_in "Departament", with: @assessment.departament
+    fill_in "Course", with: @assessment.course_id
+    fill_in "Departament", with: @assessment.departament_id
     fill_in "Grade", with: @assessment.grade
-    fill_in "User", with: @assessment.user
+    fill_in "User", with: @assessment.user_id
     click_on "Update Assessment"
 
     assert_text "Assessment was successfully updated"

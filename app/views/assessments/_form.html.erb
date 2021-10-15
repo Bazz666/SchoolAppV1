@@ -13,22 +13,32 @@
 
   <div class="field">
     <%= form.label :grade %>
-    <%= form.text_field :grade %>
+    <%= form.number_field :grade %>
   </div>
 
   <div class="field">
-    <%= form.label :course %>
-    <%= form.text_field :course %>
+    <%= form.label :course_id %>
+    <%= form.collection_select(:course_id ,Course.all, :id, :name) %>
   </div>
 
   <div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user %>
+    <%= form.label :user_id %>
+    <table>
+      <%= form.collection_check_boxes(:user_id, User.all, :id, :name ) do |b| %>
+        <tr>
+          <td>
+            <%= b.label class:"label-checkbox pt-2" do %>
+              <%= b.check_box + '&nbsp;'.html_safe + b.text%>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 
   <div class="field">
-    <%= form.label :departament %>
-    <%= form.text_field :departament %>
+    <%= form.label :departament_id %>
+    <%= form.collection_select(:departament_id ,Departament.all, :id, :name) %>
   </div>
 
   <div class="actions">

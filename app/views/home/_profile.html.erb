@@ -1,0 +1,20 @@
+<div class="col-12 border border-secondary rounded py-2">
+    <article class="media">
+        <div class="align-self-start">
+            <figure class="figure">
+            <img src="http://placehold.jp/64x64.png" class="figure-img img-fluid rounded img-thumbnail" alt="...">
+            </figure>
+        </div>
+        <div class="media-body px-3">
+            <h5 class="mt-0">Name: <%= current_user.name %> <span> <%= current_user.last_name %></span> </h5>
+            
+            <h5 class="mt-0">Birth Date: <%= current_user.birth_date %></h5>
+            <small>Address: <%= current_user.address %></small> <br>  
+            <small>Email: <%= current_user.email %></small> <br> 
+            <small class="font-weight-bold text-success">role: <%= current_user.role %></small>
+        </div>
+    </article>
+
+    <button class="btn btn-info"><%= link_to "Edit Profile", edit_user_registration_path, class:'dropdown-item' %></button>
+        
+</div>

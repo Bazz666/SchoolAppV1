@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  
-  resources :assessments
+
+  # get 'messages/index'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations' }
   resources :rooms
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
-  resources :users
-
-
-  root 'home#index'
+  resources :messages
+  resources :assessments
+  resources :departaments
+  resources :courses
   
-  end
+  root 'home#index'
+  mount ActionCable.server => '/cable'
+  
+end

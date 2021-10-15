@@ -1,17 +1,17 @@
 require 'faker'
 
- Assessment.destroy_all
- Course.destroy_all
- Departament.destroy_all
- Message.destroy_all
- Room.destroy_all
- User.destroy_all
+#  Assessment.destroy_all
+#  Course.destroy_all
+#  Departament.destroy_all
+#  Message.destroy_all
+#  Room.destroy_all
+User.destroy_all
 
 
-10.times do
+100.times do
     User.create!(
         name: Faker::Name.first_name,
-        lastName: Faker::Name.last_name,
+        last_name: Faker::Name.last_name,
         email: Faker::Internet.email,
         password: "password", 
         password_confirmation: "password"

@@ -17,7 +17,7 @@ class AssessmentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create assessment" do
     assert_difference('Assessment.count') do
-      post assessments_url, params: { assessment: { course: @assessment.course, departament: @assessment.departament, grade: @assessment.grade, user: @assessment.user } }
+      post assessments_url, params: { assessment: { course_id: @assessment.course_id, departament_id: @assessment.departament_id, grade: @assessment.grade, user_id: @assessment.user_id } }
     end
 
     assert_redirected_to assessment_url(Assessment.last)
@@ -34,7 +34,7 @@ class AssessmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update assessment" do
-    patch assessment_url(@assessment), params: { assessment: { course: @assessment.course, departament: @assessment.departament, grade: @assessment.grade, user: @assessment.user } }
+    patch assessment_url(@assessment), params: { assessment: { course_id: @assessment.course_id, departament_id: @assessment.departament_id, grade: @assessment.grade, user_id: @assessment.user_id } }
     assert_redirected_to assessment_url(@assessment)
   end
 

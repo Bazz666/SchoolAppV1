@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Assessments</h1>
+<h1>Mis cursos</h1>
 
-<table>
-  <thead>
+<table class= "mx-auto text-center">
+  <thead >
     <tr>
-      <th>Grade</th>
+      <%# <th>Grade</th> %>
       <th>Course</th>
-      <th>User</th>
       <th>Departament</th>
-      <th colspan="3"></th>
+      <th>Total Students</th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @assessments.each do |assessment| %>
       <tr>
-        <td><%= assessment.grade %></td>
+        <%# <td><%= assessment.grade </td> %>
         <td><%= assessment.course %></td>
-        <td><%= assessment.user %></td>
         <td><%= assessment.departament %></td>
+        <td><%= assessment.users%></td>
+        
         <td><%= link_to 'Show', assessment %></td>
         <td><%= link_to 'Edit', edit_assessment_path(assessment) %></td>
         <td><%= link_to 'Destroy', assessment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
