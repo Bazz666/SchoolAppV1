@@ -14,6 +14,6 @@ Things you may want to cover:
 * Heroku: https://schoolappv1.herokuapp.com/
 
 * Rails Admin 
-    user: dlatam@admin.com
+    user: dlatam@admin.cl ;
     Password: password
-* 
+
