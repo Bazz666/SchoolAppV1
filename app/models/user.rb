@@ -10,7 +10,13 @@ class User < ApplicationRecord
   has_many :rooms, through: :assessments
   has_many :departament, through: :assessments
 
+  enum role: [:student, :teacher, :admin]
+
   def to_s
     name
+  end
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
   end
 end

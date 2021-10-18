@@ -12,3 +12,8 @@ Things you may want to cover:
 * Trello: https://trello.com/b/8i33MWyS/proyectofullstack
 
 * Heroku: https://schoolappv1.herokuapp.com/
+
+* Rails Admin 
+    user: dlatam@admin.com
+    Password: password
+* 

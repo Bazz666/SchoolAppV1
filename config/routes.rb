@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   
   # get 'messages/index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
- 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    # registrations: 'users/registrations'
-  }
+  devise_for :users, controllers: {sessions: 'users/sessions' }
   resources :rooms
   resources :messages
   resources :assessments

@@ -2,8 +2,11 @@
 
 <% if current_user.present? %>
 
-    <h1>Bienvenido @<%=current_user.name%></h1>
+    <h1 class="pb-4">Bienvenido @<%=current_user.name%></h1>
+
     <div id="profile"> <%= render 'home/profile' %> </div>
+
+    <br>
     
 
     <section>
