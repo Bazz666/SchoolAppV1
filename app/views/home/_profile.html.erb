@@ -14,7 +14,8 @@
             <small class="font-weight-bold text-success">role: <%= current_user.role %></small>
         </div>
     </article>
-
-    <button class="btn btn-info"><%= link_to "Edit Profile", edit_user_registration_path, class:'dropdown-item' %></button>
-        
+    
+    <div id="edit-profile"> 
+        <button class="btn btn-info"><%= link_to "Edit Profile", edit_user_registration_path, class:'dropdown-item' %></button>
+    </div>    
 </div>

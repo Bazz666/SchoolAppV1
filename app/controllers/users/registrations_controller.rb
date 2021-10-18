@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  respond_to :html, :js
+  
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # POST /resource
+  # user /resource
   # def create
   #   super
   # end
@@ -38,18 +38,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # def update
-  #   @posts = Post.all.order(updated_at: :desc)
-  #   respond_to do |format|
-  #     if @post.update(post_params)
-  #       format.js {render nothing: true} 
-  #       format.html { redirect_to @post, notice: "Post was successfully updated." }
-  #     else
-  #       format.html { render :edit, status: :unprocessable_entity }
-  #       format.json { render json: @post.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  #  def update
+  #    @users = User.all.order(updated_at: :desc)
+  #    respond_to do |format|
+  #      if @user.update(user_params)
+  #        format.js {render nothing: true} 
+  #        format.html { redirect_to @user, notice: "user was successfully updated." }
+  #      else
+  #        format.html { render :edit, status: :unprocessable_entity }
+  #        format.json { render json: @user.errors, status: :unprocessable_entity }
+  #      end
+  #    end
+  #  end
+ 
 
   protected
 
@@ -65,9 +66,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    super(resource)
-  end
+  # def after_sign_up_path_for(resource)
+  #   super(resource)
+  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
