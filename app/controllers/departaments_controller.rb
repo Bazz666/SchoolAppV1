@@ -1,5 +1,6 @@
 class DepartamentsController < ApplicationController
   before_action :set_departament, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /departaments or /departaments.json
   def index

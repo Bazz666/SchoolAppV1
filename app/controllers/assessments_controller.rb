@@ -1,5 +1,6 @@
 class AssessmentsController < ApplicationController
   before_action :set_assessment, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /assessments or /assessments.json
   def index
@@ -14,6 +15,7 @@ class AssessmentsController < ApplicationController
   # GET /assessments/new
   def new
     @assessment = Assessment.new
+    @users = User.all
   end
 
   # GET /assessments/1/edit
@@ -65,6 +67,6 @@ class AssessmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def assessment_params
-      params.require(:assessment).permit(:grade, :course_id, :user_id,  :departament_id, {user_id:[]})
+      params.require(:assessment).permit(:grade, :course_id, :user_id,  :departament_id)
     end
 end

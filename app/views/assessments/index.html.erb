@@ -19,7 +19,7 @@
         <%# <td><%= assessment.grade </td> %>
         <td><%= assessment.course %></td>
         <td><%= assessment.departament %></td>
-        <td><%= assessment.users%></td>
+        <td><%= assessment.course.users.each do |u| u.name end%></td>
         
         <td><%= link_to 'Show', assessment %></td>
         <td><%= link_to 'Edit', edit_assessment_path(assessment) %></td>

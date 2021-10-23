@@ -17,7 +17,8 @@
 
 <p>
   <strong>Students (pendiente):</strong>
-  <%= @assessment.users %>
+  <% @assessment.course.users.each do |u| u.name end %>
+   
   
 </p>
 

@@ -16,6 +16,14 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field" id="assessments">
+  
+    <%= form.fields_for :assessments do |ff| %>
+     <%= render 'assessments_fields', f:ff %>
+    <% end %>
+
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

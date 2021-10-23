@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>students</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +16,13 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
+          <td>
+          <% course.users.each do |co| %>
+            <%= co.id %>
+          <% end %>
+        </td>
+          
+        
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

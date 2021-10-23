@@ -5,10 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :messages
-  has_many :rooms, through: :rooms
+  has_many :rooms, through: :messages
+
   has_many :assessments
-  has_many :rooms, through: :assessments
-  has_many :departament, through: :assessments
+
+  has_many :courses, through: :assessments
+  has_many :departaments, through: :assessments
+ 
+  
 
   enum role: [:student, :teacher, :admin]
 
