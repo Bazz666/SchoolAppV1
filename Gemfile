@@ -31,6 +31,8 @@ gem 'faker'
 gem 'jquery-rails'
 gem 'rails_admin' 
 gem 'cancancan'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -21,12 +21,29 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= render 'shared/navbar' %>
-    <div class="container mt-5 pt-5"">
+    <div class="container py-5 my-5">
+      <% if notice %>
+          <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>Información</h4>
+            <p><%= notice %></p>
+          </div>
+      <% end %>
+
+      <% if alert %>
+          <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>Atención</h4>
+            <p><%= alert %></p>
+          </div>
+      <% end %>
+      <div class="container mt-5 pt-5">
       <%= yield %>
     </div>
+    </div>
+
+    
   
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"
