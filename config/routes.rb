@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions' , omniauth_callbacks: 'users/omniauth_callbacks'}
   resources :rooms
   resources :messages
-  resources :assessments
   resources :departaments
   resources :courses
+
   
   root 'home#index'
   mount ActionCable.server => '/cable'

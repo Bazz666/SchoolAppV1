@@ -15,8 +15,8 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-    @users = User.all
-    @course.assessments.build
+    @user = User.all
+    @course.users_courses_departaments.build
   end
 
   # GET /courses/1/edit
@@ -26,7 +26,8 @@ class CoursesController < ApplicationController
   # POST /courses or /courses.json
   def create
     @course = Course.new(course_params)
-
+    @user = User.all
+    
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: "Course was successfully created." }
@@ -68,7 +69,7 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, assessments_attributes: [:id, :user_id, :name])
+      params.require(:course).permit(:name, user_ids:[],  users_courses_departaments_attributes: [:id, :course_id, :name])
     end
 end
   

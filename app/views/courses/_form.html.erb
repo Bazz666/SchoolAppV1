@@ -16,12 +16,24 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field" id="assessments">
-  
-    <%= form.fields_for :assessments do |ff| %>
-     <%= render 'assessments_fields', f:ff %>
-    <% end %>
+  <div class="field" id="users_courses_departaments">
+    <div class= "field">
+        <%= form.label :users %>
+        <%= form.collection_check_boxes(:user_ids, @user, :id, :name ) do |a| %>
+                <%= a.label do %>
+                        <%= a.check_box +  a.text %>
+                <% end%>
+        <% end%>
+    </div>
+  </div>
 
+  <div class="field">
+    <div>
+      <%= form.fields_for :users_courses_departaments do |ff| %>
+        <%= ff.label :name %>
+        <%= ff.text_field :name %>
+      <% end %>
+    </div>
   </div>
 
   <div class="actions">

@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_many :messages
   has_many :rooms, through: :messages
 
-  has_many :assessments
+  has_many :users_courses_departaments
 
-  has_many :courses, through: :assessments
-  has_many :departaments, through: :assessments
+  has_many :courses, through: :users_courses_departaments
+  has_many :departaments, through: :users_courses_departaments
  
   
 
