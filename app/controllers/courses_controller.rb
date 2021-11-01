@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
 
-        AlertMailer.alert_user(@user).deliver
+        AlertMailer.alert_user(@user)
         
         format.html { redirect_to @course, notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
