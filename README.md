@@ -17,3 +17,9 @@ Things you may want to cover:
     user: dlatam@admin.cl ;
     Password: password
 
+* Login OAUTH with github DONE
+
+* Mailing on "courses#create"  users
+
+
+
