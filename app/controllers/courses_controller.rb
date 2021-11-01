@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
     @teacher = User.where(role: 'teacher')
     
     # @student = User.where(user.is? :student)
-    @user = current_user
+    
     respond_to do |format|
       if @course.save
 
