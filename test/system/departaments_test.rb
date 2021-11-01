@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class DepartamentsTest < ApplicationSystemTestCase
+class DepartamentTest < ApplicationSystemTestCase
   setup do
     @departament = departaments(:one)
   end

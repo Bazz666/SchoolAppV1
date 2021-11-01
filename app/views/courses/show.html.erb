@@ -4,14 +4,26 @@
   <strong>Name:</strong>
   <%= @course.name %>
 </p>
-<p>
-  <strong>students:</strong>
 
-  <% @course.users.each do |u| %>
-    <%= u.name %>
+<p>
+  <strong>Teachers:</strong>
+
+ <% @course.users.teacher.each do |teacher| %>
+    <%= teacher.name %>
+  <% end %>
+</p> 
+
+<p>
+  <strong>Students:</strong>
+
+  <% @course.users.student.each do |student| %>
+    <%= student.name %>
   <% end %>
   
-</p>
+</p> 
+
+
+ 
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

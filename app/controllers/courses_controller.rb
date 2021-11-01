@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
     @user = User.all
-    @course.users_courses_departaments.build
+    @course.course_departament_user.build
   end
 
   # GET /courses/1/edit
@@ -26,10 +26,17 @@ class CoursesController < ApplicationController
   # POST /courses or /courses.json
   def create
     @course = Course.new(course_params)
-    @user = User.all
+    @admin = User.where(role: 'admin')
+    @student = User.where(role: 'student')
+    @teacher = User.where(role: 'teacher')
     
+    # @student = User.where(user.is? :student)
+    @user = current_user
     respond_to do |format|
       if @course.save
+
+        AlertMailer.alert_user(@user).deliver
+        
         format.html { redirect_to @course, notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
@@ -69,7 +76,7 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, user_ids:[],  users_courses_departaments_attributes: [:id, :course_id, :name])
+      params.require(:course).permit(:name, user_ids:[],  course_departament_users_attributes: [:id, :course_id, :name])
     end
 end
   

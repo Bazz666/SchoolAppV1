@@ -8,13 +8,25 @@ require 'faker'
 User.destroy_all
 
 
-100.times do
+50.times do
     User.create!(
         name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         email: Faker::Internet.email,
         password: "password", 
-        password_confirmation: "password"
+        password_confirmation: "password",
+        role: "student"
+    ) 
+end
+
+20.times do
+    User.create!(
+        name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.email,
+        password: "password", 
+        password_confirmation: "password",
+        role: "teacher"
     ) 
 end
 

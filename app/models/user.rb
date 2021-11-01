@@ -3,19 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,  :omniauthable, omniauth_providers: [:github]
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :rooms, through: :messages
 
-  has_many :users_courses_departaments
+  has_many :course_departament_users, dependent: :destroy
 
-  has_many :courses, through: :users_courses_departaments
-  has_many :departaments, through: :users_courses_departaments
+  has_many :courses, through: :course_departament_users, dependent: :destroy
+  has_many :departaments, through: :course_departament_users
  
   
 
   enum role: [:student, :teacher, :admin]
 
-  
+  # before_create :user_default
 
   def to_s
     name
@@ -42,4 +42,9 @@ class User < ApplicationRecord
 
     user
   end
+  private
+    def user_default
+    self.role = :"student"
+    end
+  
 end

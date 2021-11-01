@@ -15,34 +15,19 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-   <br>
+
   <div class="field" id="course_departament_user">
     <div class= "field">
-        <%= form.label :teachers %>
-        <br>
-        <%= form.collection_check_boxes(:user_ids, User.where(role: 'teacher'), :id, :name ) do |a| %>
+        <%= form.label :users %>
+        <%= form.collection_check_boxes(:user_ids, @user, :id, :name ) do |a| %>
                 <%= a.label do %>
-                        <%= a.check_box  + '&nbsp;'.html_safe +  a.text %>
+                        <%= a.check_box + '&nbsp;'.html_safe  + a.text %>
                 <% end%>
         <% end%>
     </div>
   </div>
 
-  <br>
-  
-  <div class="field" id="course_departament_user">
-    <div class= "field">
-        <%= form.label :students %>
-         <br>
-        <%= form.collection_check_boxes(:user_ids, User.where(role: 'student'), :id, :name ) do |a| %>
-                <%= a.label do %>
-                        <%= a.check_box  + '&nbsp;'.html_safe +  a.text %>
-                <% end%>
-        <% end%>
-    </div>
-  </div>
-   
-  
+
 
   <div class="actions">
     <%= form.submit %>

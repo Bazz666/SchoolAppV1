@@ -12,7 +12,7 @@ class Ability
       # can :dashboard
       can :manage, :all
 
-      # can :manage, users_courses_departaments, user_id: user.id
+      # can :manage, course_departament_user, user_id: user.id
     else
       can :read, :all
     end

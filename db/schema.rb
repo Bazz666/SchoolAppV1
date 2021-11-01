@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_001939) do
+ActiveRecord::Schema.define(version: 2021_10_30_011456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "course_departament_users", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "departament_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_course_departament_users_on_course_id"
+    t.index ["departament_id"], name: "index_course_departament_users_on_departament_id"
+    t.index ["user_id"], name: "index_course_departament_users_on_user_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -62,20 +73,9 @@ ActiveRecord::Schema.define(version: 2021_10_30_001939) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "users_courses_departaments", force: :cascade do |t|
-    t.bigint "course_id"
-    t.bigint "user_id"
-    t.bigint "departament_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_users_courses_departaments_on_course_id"
-    t.index ["departament_id"], name: "index_users_courses_departaments_on_departament_id"
-    t.index ["user_id"], name: "index_users_courses_departaments_on_user_id"
-  end
-
+  add_foreign_key "course_departament_users", "courses"
+  add_foreign_key "course_departament_users", "departaments"
+  add_foreign_key "course_departament_users", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "users_courses_departaments", "courses"
-  add_foreign_key "users_courses_departaments", "departaments"
-  add_foreign_key "users_courses_departaments", "users"
 end
