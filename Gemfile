@@ -33,6 +33,8 @@ gem 'rails_admin'
 gem 'cancancan'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
+gem "chartkick"
+gem 'groupdate'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
