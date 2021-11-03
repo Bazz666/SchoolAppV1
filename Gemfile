@@ -35,6 +35,7 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
 gem "chartkick"
 gem 'groupdate'
+gem 'redis'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
