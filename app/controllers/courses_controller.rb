@@ -31,11 +31,11 @@ class CoursesController < ApplicationController
     @teacher = User.where(role: 'teacher')
     
     # @student = User.where(user.is? :student)
-    @user = current_user
+    @users = @course.users
     respond_to do |format|
       if @course.save
 
-        AlertMailer.alert_user(@user).deliver
+        AlertMailer.alert_user(@users).deliver
         
         format.html { redirect_to @course, notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
