@@ -34,8 +34,8 @@ Things you may want to cover:
     2.  Login OAUTH con  github (Funcionando en heroku)
     3.  Mailing en la accion "courses#create"  
     4.  ROLES {
-                Student:    student@example.com    |    s12345
-                Teacher:    teacher@example.com    |    t12345
+                Student:    student@example.com    |    s12345 ;
+                Teacher:    teacher@example.com    |    t12345 ;
                 Admin:      admin@example.com      |    a12345   
             }
 
