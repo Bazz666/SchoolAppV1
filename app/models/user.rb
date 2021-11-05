@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   enum role: [:student, :teacher, :admin]
 
-  before_create :user_default
+  # before_create :user_default
 
   def to_s
     name
