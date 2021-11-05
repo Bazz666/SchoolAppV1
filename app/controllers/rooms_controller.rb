@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
     @messages = Message.all
     @message = Message.new
     # @users = User.all
-  
+    
   end
 
   # GET /rooms/1 or /rooms/1.json
