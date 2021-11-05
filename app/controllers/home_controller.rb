@@ -11,7 +11,13 @@ class HomeController < ApplicationController
     
     
   end
-
+  def charts
+    # @user = User.all
+    @user_role = User.group(:role).count
+    @course_users= Course.group(:name).sum(:id)
+    # @courses_avg = Course.group(:id).count(:user)
+    
+  end
  
 
   

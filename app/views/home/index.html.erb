@@ -4,8 +4,6 @@
 
     	<div id="wrapper">
 
-				
-
 				<!-- Main -->
 					<div id="main">
 
@@ -13,16 +11,17 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="single.html">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+										<h2><a href="single.html">We are developing for you</a></h2>
+										<p>We are working for you! We will incorporate new improvements by the end of the season</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+										<time class="published" datetime="2015-11-01">November 4, 2021</time>
+										<a href="#" class="author"><span class="name">SchoolApp Team</span><%= image_tag("avatar.jpg")%> </a>
 									</div>
 								</header>
-								<a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+								<a href="single.html" class="image featured">  <%= image_tag("pic01.jpg")%> </a>
+                               
+								<p> We are working for you! We will incorporate new improvements by the end of the season.</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="single.html" class="button large">Continue Reading</a></li>
@@ -39,16 +38,16 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="single.html">Ultricies sed magna euismod enim vitae gravida</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+										<h2><a href="single.html">Organize your week</a></h2>
+										<p>we are working on a view to implement a customizable calendar function</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-10-25">October 25, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+										<time class="published" datetime="2015-10-25">October 25, 2021</time>
+										<a href="#" class="author"><span class="name">SchoolApp team</span><%= image_tag("avatar.jpg")%> /a>
 									</div>
 								</header>
-								<a href="single.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
+								<a href="single.html" class="image featured"> <%= image_tag("pic02.jpg")%></a>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper...</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="single.html" class="button large">Continue Reading</a></li>
@@ -57,6 +56,31 @@
 										<li><a href="#">General</a></li>
 										<li><a href="#" class="icon solid fa-heart">28</a></li>
 										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+                        <!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="single.html">10 Steps To Ace Your Next Test</a></h2>
+										<p>We promise your teacher isn’t out to get you. As unpleasant as taking a test can often be, it actually does more than just show your teacher what you know: it can actually help you learn.</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-10-25">October 25, 2015</time>
+										<a href="#" class="author"><span class="name">SchoolApp team</span><%= image_tag("avatar.jpg")%> /a>
+									</div>
+								</header>
+								<a href="single.html" class="image featured"> <%= image_tag("pic03.jpg")%></a>
+								<p>Will there be multiple-choice questions or short answers? Will you write an in-class essay? The goals and layout of the test will determine how you tackle learning the material...</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="single.html" class="button large">Continue Reading</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">15</a></li>
+										<li><a href="#" class="icon solid fa-comment">78</a></li>
 									</ul>
 								</footer>
 							</article>
@@ -68,10 +92,21 @@
 
 						<!-- Intro -->
 							<section id="intro">
-								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+								
 								<header>
-									<h2>Future Imperfect</h2>
-									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+									<h2>Welcome to SchoolApp Open Beta</h2>
+									<div class="media-body px-3">
+                                        <h5 class="mt-0">Name: <%= current_user.name %> <span> <%= current_user.last_name %></span> </h5>
+            
+                                        <h5 class="mt-0">Birth Date: <%= current_user.birth_date %></h5>
+                                        <small>Address: <%= current_user.address %></small> <br>  
+                                        <small>Email: <%= current_user.email %></small> <br> 
+                                        <small class="font-weight-bold text-success">role: <%= current_user.role %></small>
+                                    </div>
+                                    <br>
+                                    <div >
+                                        <a><%= link_to "Edit Profile", edit_user_registration_path,class:'button scrolly btn-info text-center' %></a>
+                                    </div>
 								</header>
 							</section>
 
@@ -82,41 +117,41 @@
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Vitae sed condimentum</a></h3>
+												<h3><a href="single.html">How to avoid accidents back home</a></h3>
 												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<a href="#" class="author"><%= image_tag("avatar.jpg")%> </a>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic04.jpg")%></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
+												<h3><a href="single.html">Girls' school hockey team qualify for semi-final match</a></h3>
 												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<a href="#" class="author"><%= image_tag("avatar.jpg")%> </a>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic05.jpg")%></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Odio congue mattis</a></h3>
+												<h3><a href="single.html">Musical workshop every Friday after school</a></h3>
 												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<a href="#" class="author"><%= image_tag("avatar.jpg")%> </a>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic06.jpg")%></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Enim nisl veroeros</a></h3>
+												<h3><a href="single.html">Art workshop reopens weekends due to loss of pandemics</a></h3>
 												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<a href="#" class="author"><%= image_tag("avatar.jpg")%> alt="" /></a>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic07.jpg")%></a>
 										</article>
 
 								</div>
@@ -128,28 +163,28 @@
 									<li>
 										<article>
 											<header>
-												<h3><a href="single.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+												<h3><a href="single.html">Science fair 2021 </a></h3>
 												<time class="published" datetime="2015-10-20">October 20, 2015</time>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic08.jpg")%></a>
 										</article>
 									</li>
 									<li>
 										<article>
 											<header>
-												<h3><a href="single.html">Convallis maximus nisl mattis nunc id lorem</a></h3>
+												<h3><a href="single.html">Google meet or zoom?</a></h3>
 												<time class="published" datetime="2015-10-15">October 15, 2015</time>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic09.jpg")%></a>
 										</article>
 									</li>
 									<li>
 										<article>
 											<header>
-												<h3><a href="single.html">Euismod amet placerat vivamus porttitor</a></h3>
+												<h3><a href="single.html">Speling Bee 2021</a></h3>
 												<time class="published" datetime="2015-10-10">October 10, 2015</time>
 											</header>
-											<a href="single.html" class="image"><img src="images/pic10.jpg" alt="" /></a>
+											<a href="single.html" class="image"><%= image_tag("pic10.jpg")%></a>
 										</article>
 									</li>
 									
@@ -159,7 +194,7 @@
 						<!-- About -->
 							<section class="blurb">
 								<h2>About</h2>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+								<p>School app was born from the need to improve effective communication in a safe and ergonomic environment for teachers, students and parents..</p>
 								<ul class="actions">
 									<li><a href="#" class="button">Learn More</a></li>
 								</ul>
@@ -174,216 +209,40 @@
 									<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
 									<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
-								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+								<p class="copyright">&copy; SchoolApp. Design: <a href="http://html5up.net">Bazz666</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
 							</section>
 
 					</section>
 
-			</div>	<div id="wrapper">
-
-				
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="single.html">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="single.html" class="button large">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="single.html">Ultricies sed magna euismod enim vitae gravida</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-10-25">October 25, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="single.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="single.html" class="button large">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-
-					</div>
-
-				<!-- Sidebar -->
-					<section id="sidebar">
-
-						<!-- Intro -->
-							<section id="intro">
-								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
-								<header>
-									<h2>Future Imperfect</h2>
-									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-								</header>
-							</section>
-
-						<!-- Mini Posts -->
-							<section>
-								<div class="mini-posts">
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Vitae sed condimentum</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
-												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Odio congue mattis</a></h3>
-												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Enim nisl veroeros</a></h3>
-												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
-										</article>
-
-								</div>
-							</section>
-
-						<!-- Posts List -->
-							<section>
-								<ul class="posts">
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Convallis maximus nisl mattis nunc id lorem</a></h3>
-												<time class="published" datetime="2015-10-15">October 15, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Euismod amet placerat vivamus porttitor</a></h3>
-												<time class="published" datetime="2015-10-10">October 10, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic10.jpg" alt="" /></a>
-										</article>
-									</li>
-									
-								</ul>
-							</section>
-
-						<!-- About -->
-							<section class="blurb">
-								<h2>About</h2>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</section>
-
-						<!-- Footer -->
-							<section id="footer">
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
-									<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-							</section>
-
-					</section>
-
-			</div>
-    
-
+			</div>	
     
 
 
 <% else %>
 
     <!-- One -->
-    <section id="main" class="post">
+    <section id="main" class="post text-center">
         <section>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+            <a href="#" class="image"><%= image_tag("pic12.jpg")%></a>
             <div class="content">
                 <div class="inner">
-                    <h2>Welcome to SchoolApp v1 Beta </h2>
-                    <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+                    <h2>Who is SchoolApp? </h2>
+                    <p>School APP is the solution for a better effective communication between the different roles involved in the structure of a school, attending to all the needs detected during the pandemic.</p>
+
+                    <p>Our application seeks to give the user all the comfort of being able to satisfy all their requirements.
+                    For this we seek to integrate and improve various external elements that have helped this work..</p>
                     
                 </div>
             </div>
         </section>
 
         <section>
-            <a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-            <div class="content">
+            <a href="#" class="image "><%= image_tag("pic01.jpg")%></a>
+            <div class="content text-center">
                 <div class="inner">
-                    <h2>coming soon...</h2>
+                    <h2>we are improving day by day</h2>
                     <p>
-                        calendar function, grade management, files upload, detailed profile customization, and more! 
+                        We seek to improve, the application is open to all public, we value any feedback or opinion, try the beta now! 
                     </p>
                     
                 </div>
@@ -394,38 +253,43 @@
     <!-- Two -->
     <section id="two" class="post text-center">
         <div class="inner">
-        <h2>What we do</h2>
+        <h2>What we do ?</h2>
         <p>
             SchoolApp is a educational management platform that improves effective communication between its users in a closed and safe environment
         </p>
         <div class="features">
             <section>
-                <span class="icon solid major fa-code"></span>
+                <span class="icon solid major fa-comments"></span>
                 <h3>Global Mesagges</h3>
                 <p>send important messages to several users of the same course.</p>
             </section>
             <section>
-                <span class="icon solid major fa-lock"></span>
+                <span class="icon solid major fa-chart-pie"></span>
                 <h3>Dynamic Graphics</h3>
                 <p>we are working to bring you the most relevant indicators regarding the application.</p>
             </section>
             <section>
-                <span class="icon solid major fa-cog"></span>
-                <h3>Control Attendance</h3>
+                <span class="icon solid major fa-lock"></span>
+                <h3>Safe environment</h3>
+                <p>Contact only people you know.</p>
+            </section>
+            <section>
+                <span class="icon solid major fa-tasks"></span>
+                <h3>Control Attendance and grades</h3>
                 <p>check the participation of your students.</p>
             </section>
             <section>
-                <span class="icon solid major fa-desktop"></span>
+                <span class="icon solid major fa-code"></span>
                 <h3>Public Code </h3>
                 <p>The code in github is public, you can see the code and contribute if you wish.</p>
             </section>
             <section>
-                <span class="icon solid major fa-link"></span>
-                <h3>sign in with github</h3>
-                <p>Sign in with your github account if you want to analyze and understand the code for educational purposes.</p>
+                <span class="icon solid major fa-calendar-alt"></span>
+                <h3>Plan your week</h3>
+                <p>We are working on a calendar function so we don't forget what is important.</p>
             </section>
             <section>
-                <span class="icon major fa-gem"></span>
+                <span class="icon solid major fa-mobile"></span>
                 <h3>Responsive Aplication</h3>
                 <p>the creation of this application is based on the concept "first mobile".</p>
             </section>
@@ -440,14 +304,17 @@
 
             <h2 class =" py-5">Test the beta app for Free</h2>
             <p>sign up for free or sign up with github and try the beta version.</p>
-            
-            <ul class="actions ml-5 pl-5  ">
-				<li><a><%= link_to "Create Account", new_user_registration_path,class:'button scrolly btn-danger ml-5 text-center' %></a></li>
-                <br>
-                <li><a><%= link_to "Login", user_session_path,class:'button scrolly btn-danger ml-5 text-center' %></a></li>
-                <hr>
-			</ul>
 
+            <div class="container mx-auto text-center">
+                
+                <a><%= link_to "Create Account", new_user_registration_path,class:'button scrolly btn-info mx-auto  my-3 text-center' %></a>
+                <span>
+                
+                <a><%= link_to "Login", user_session_path,class:'button scrolly btn-info mx-3 text-center' %></a>
+                <hr>
+			
+            </div> 
+            
         </div>
     </section>
     <hr>

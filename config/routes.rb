@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :departaments
   resources :courses
+  get 'home/charts'
 
   
   root 'home#index'

@@ -1,5 +1,5 @@
 <h1>My course Chat</h1>
-<div class="well" id="chatbox" style="height: 250px; border: solid 1px #222222; overflow-y: scroll">
+<div class="well" id="chatbox" style="height: 430px; overflow-y: scroll">
   <% @messages.each do |message| %>
     <%= render 'messages/message', message: message %>
   <% end %>
